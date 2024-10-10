@@ -19,9 +19,10 @@ int main()
         MAX_VALUE = 1000;
 
     // variables
-    int num_1, \
+    int num_1,
         num_2,
-        answer;
+        correct_answer,
+        student_answer;
 
     //get system times
     unsigned seed = time(0);
@@ -39,21 +40,26 @@ int main()
     num_1 = (rand() % (MAX_VALUE - MIN_VALUE + 1)) + MIN_VALUE;
     num_2 = (rand() % (MAX_VALUE - MIN_VALUE + 1)) + MIN_VALUE;
 
-    answer = num_1 + num_2;
-    //Display thr problem
+    //calculate the correct answers
+    correct_answer = num_1 + num_2;
+
+    //Display the problem
     cout << num_1 << " + " << num_2 << " = ? \n" << endl;
 
-    // ask user to press ENTER to continue
-    cout << "Press \"Enter\" to see solution";
-    cin.get();
-    cout << endl;
+    //ask the student
+    cout << "Enter your answer: ";
+    cin >> student_answer;
 
-    //Display the answer to the problem
-    cout << num_1 << " + " << num_2 << " = ";
-    cout << answer << endl;
+   // check if the student's answer is correct
+    if (student_answer == correct_answer) {
+        cout << "You are correct!\n";
+    } else {
+        cout << "Your answer is not correct. \n";
+    }
+
     cout << "\n---------------------------\n";
     cout << endl;
 
     return 0;
-
+   
 }
